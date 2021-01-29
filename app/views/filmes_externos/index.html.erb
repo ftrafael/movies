@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row align-items-start">
+    <% @filme_externo.each do |filme| %>
+      <div class="col">
+        <div class="card card-custom p-2 m-3" style="width: 18rem;">
+          <img src=<%= @poster+filme.poster_path %> class="card-img-top" alt="Poster do filme">
+          <div class="card-body">
+            <h3 class="card-text"><%= filme.title %></h3>
+            <p class="card-text"><%= filme.overview %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <a class="navbar-brand" href="<%= root_path %>">
+    <img src="/assets/logo.svg" alt="The Movie Database (TMDb)" width="154" height="20">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+  aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <%= render partial: '/layouts/dropdown'%>
+
+  <form class="d-flex">
+    <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</nav>
+
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#search").autocomplete({
+    source: function( request, response ) {
+      $.ajax( {
+        url: "https://api.themoviedb.org/3/search/multi?api_key=e2e6c0526e3737f2381684d2fd63d354&language=pt-BR&query=" + request.term,
+        dataType: "jsonp",
+        data: {
+          term: request.term
+        },
+        success: function( data ) {
+          response( data );
+        }
+      } );
+    },
+    minLength: 3
+  });
+})
+</script>

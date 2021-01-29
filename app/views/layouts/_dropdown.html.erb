@@ -1,0 +1,33 @@
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item dropdown">
+      <a class="nav-link link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button"
+       aria-haspopup="true" aria-expanded="false">
+        Filmes
+      </a>
+      <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Cadastrar</a>
+        <a class="dropdown-item" href="#">Filmes Cadastrados</a>
+        <a class="dropdown-item" href="#">Salvos</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button"
+       aria-haspopup="true" aria-expanded="false">
+        Series
+      </a>
+      <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+        <%= link_to 'Populares', series_path %>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button"
+       aria-haspopup="true" aria-expanded="false">
+        Pessoas
+      </a>
+      <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+        <%= link_to 'Populares', pessoas_path %>
+      </div>
+    </li>
+  </ul>
+</div>
