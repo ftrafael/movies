@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get '/series', to: 'series#index'
   get '/pessoas', to: 'pessoas#index'
-  resources :filmes, only: %i[index show new create edit update]
+  resources :filmes, only: %i[index show new create edit update destroy]
 end

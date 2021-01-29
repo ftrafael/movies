@@ -6,9 +6,8 @@
         Filmes
       </a>
       <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Cadastrar</a>
-        <a class="dropdown-item" href="#">Filmes Cadastrados</a>
-        <a class="dropdown-item" href="#">Salvos</a>
+        <%= link_to 'Cadastrar', new_filme_path %><br/>
+        <%= link_to 'Filmes Cadastrados', filmes_path %>
       </div>
     </li>
     <li class="nav-item dropdown">
