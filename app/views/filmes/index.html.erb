@@ -6,8 +6,8 @@
           <div class="card-body">
             <h3 class="card-text"><%= filme.nome %></h3>
             <p class="card-text"><%= filme.descricao %></p>
-            <button type="button" class="btn btn-danger">Excluir</button>
-            <button type="button" class="btn btn-primary">Editar</button>
+            <%= button_to "Excluir", filme, method: :delete, class:"btn btn-danger", 
+            data: {confirm: "Tem certeza que deseja remover o filme #{filme.nome}? "} %><button type="button" class="btn btn-primary">Editar</button>
           </div>
         </div>
       </div>

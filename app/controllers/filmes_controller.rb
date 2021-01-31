@@ -1,4 +1,7 @@
 class FilmesController < ApplicationController
+  
+  before_action :set_filme, only: [:edit, :update, :destroy]
+  
   def index
     @filmes = Filme.all
   end
@@ -22,9 +25,12 @@ class FilmesController < ApplicationController
   end
 
   def destroy
-    nome = params[:nome]
-    Filme.destroy nome
+    @filme.destroy
     redirect_to root_url
+  end
+  
+  def set_filme
+    @filme = Filme.find(params[:id])
   end
 
 end
