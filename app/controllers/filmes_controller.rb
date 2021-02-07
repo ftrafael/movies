@@ -20,10 +20,6 @@ class FilmesController < ApplicationController
     end 
   end
 
-  def filmes_params
-    params.require(:filme).permit(:nome, :descricao)
-  end
-
   def destroy
     @filme.destroy
     redirect_to root_url
@@ -34,7 +30,7 @@ class FilmesController < ApplicationController
   end
 
   def update
-    if @filme.update filme_params
+    if @filme.update filmes_params
       flash[:notice] = "Filme atualizado com sucesso!"
       redirect_to root_url
     else
@@ -44,6 +40,12 @@ class FilmesController < ApplicationController
   
   def set_filme
     @filme = Filme.find(params[:id])
+  end
+
+  private
+
+  def filmes_params
+    params.require(:filme).permit(:nome, :descricao)
   end
 
 end
