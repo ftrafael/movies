@@ -28,6 +28,19 @@ class FilmesController < ApplicationController
     @filme.destroy
     redirect_to root_url
   end
+
+  def edit
+    render :edit
+  end
+
+  def update
+    if @filme.update filme_params
+      flash[:notice] = "Filme atualizado com sucesso!"
+      redirect_to root_url
+    else
+     render :edit
+    end
+  end
   
   def set_filme
     @filme = Filme.find(params[:id])

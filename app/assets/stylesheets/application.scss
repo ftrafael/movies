@@ -17,6 +17,10 @@
  */
  @import "bootstrap";
 
+body {
+  background-color: whitesmoke;
+}
+
 .navbar-custom {
   background-color: #032541;
   color: #fff;
@@ -34,9 +38,53 @@
 .dropdown-menu > li > a:hover:after {
   text-decoration: underline;
   transform: rotate(-90deg);
-} 
-
-.card-custom {
-  height: 300px;
-  overflow: scroll;
 }
+
+.img-fluid {
+  width: 100%;
+}
+
+.card {
+  background-color: transparent;
+  position: relative;
+  height: 278px;
+  width: 185px;
+  margin: 5px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+}
+
+.card .flip {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .flip{
+  transform: rotateY(180deg);
+}
+
+.front, .back{
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
+  height: 278px;
+  width: 185px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5 );
+  overflow: hidden;
+}
+
+.front img{
+  height: 278px;
+  width: 185px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5 );
+}
+
+

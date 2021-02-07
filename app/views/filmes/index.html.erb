@@ -7,7 +7,9 @@
             <h3 class="card-text"><%= filme.nome %></h3>
             <p class="card-text"><%= filme.descricao %></p>
             <%= button_to "Excluir", filme, method: :delete, class:"btn btn-danger", 
-            data: {confirm: "Tem certeza que deseja remover o filme #{filme.nome}? "} %><button type="button" class="btn btn-primary">Editar</button>
+            data: {confirm: "Tem certeza que deseja remover o filme #{filme.nome}? "} %>
+            <%= link_to "Editar", edit_filme_path(filme), class:"btn btn-default" %>
+
           </div>
         </div>
       </div>
