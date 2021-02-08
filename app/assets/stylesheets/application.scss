@@ -23,7 +23,11 @@ body {
 
 .navbar-custom {
   background-color: #032541;
-  color: #fff;
+  color: #fff !important;
+}
+
+.navbar .navbar-toggler{
+  background-color: white;
 }
 
 .link-custom {
@@ -45,12 +49,12 @@ body {
 }
 
 .card {
-  background-color: transparent;
+  background-color: transparent !important;
   position: relative;
-  height: 278px;
-  width: 185px;
+  height: 290px;
+  width: 190px;
   margin: 5px;
-  border: none;
+  border: none !important;
   justify-content: center;
   align-items: center;
   perspective: 500px;

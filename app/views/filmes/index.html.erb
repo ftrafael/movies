@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="row align-items-start">
     <% @filmes.each do |filme| %>
@@ -9,7 +15,6 @@
             <%= button_to "Excluir", filme, method: :delete, class:"btn btn-danger", 
             data: {confirm: "Tem certeza que deseja remover o filme #{filme.nome}? "} %>
             <%= link_to "Editar", edit_filme_path(filme), class:"btn btn-default" %>
-
           </div>
         </div>
       </div>

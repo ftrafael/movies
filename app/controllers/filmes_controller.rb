@@ -13,8 +13,8 @@ class FilmesController < ApplicationController
   def create
     @filme = Filme.new filmes_params
     if @filme.save
-      flash[:notice] = "Filme salvo com sucesso!"
-      redirect_to root_url
+      flash[:notice] = "O filme #{@filme.nome} foi cadastrado com sucesso!"
+      redirect_to filmes_url
     else
       renderiza :new
     end 
@@ -22,7 +22,7 @@ class FilmesController < ApplicationController
 
   def destroy
     @filme.destroy
-    redirect_to root_url
+    redirect_to filmes_url
   end
 
   def edit
@@ -31,8 +31,8 @@ class FilmesController < ApplicationController
 
   def update
     if @filme.update filmes_params
-      flash[:notice] = "Filme atualizado com sucesso!"
-      redirect_to root_url
+      flash[:notice] = "O filme #{@filme.nome} foi atualizado com sucesso!"
+      redirect_to filmes_url
     else
      render :edit
     end
